@@ -12,6 +12,11 @@ The project follows a complete machine learning workflow—from data preprocessi
 
 ---
 
+##  Live Demo
+link
+
+---
+
 ## 🚀 Features
 
 * Predicts residential property prices instantly

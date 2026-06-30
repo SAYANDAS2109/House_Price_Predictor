@@ -10,11 +10,9 @@ This project demonstrates the complete Machine Learning pipeline, including data
 
 🚀 **Streamlit Application**
 
-> **Link:** *(Add your deployed Streamlit URL here)*
+> **Link:** *https://housepricepredictor-vurfcauat8bjbt3qxdtppg.streamlit.app/*
 
-Example:
 
-https://house-price-predictor.streamlit.app
 
 ---
 

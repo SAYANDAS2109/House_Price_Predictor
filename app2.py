@@ -2,12 +2,12 @@ import streamlit as st
 import pandas as pd
 import pickle as pkl
 
-model = pkl.load(open(r"C:\C LANGUAGE\code2\house_price_predictor\house_price_model (4).pkl","rb"))
+model = pkl.load(open("house_price_model (4).pkl","rb"))
 
-locality_dict = pkl.load(open(r"C:\C LANGUAGE\code2\house_price_predictor\locality_dict (1).pkl","rb"))
+locality_dict = pkl.load(open("locality_dict (1).pkl","rb"))
 
-region_dict = pkl.load(open(r"C:\C LANGUAGE\code2\house_price_predictor\region_dict (1).pkl","rb"))
-region_locality_dict = pkl.load(open(r"C:\C LANGUAGE\code2\house_price_predictor\region_locality_dict (1).pkl","rb"))
+region_dict = pkl.load(open("region_dict (1).pkl","rb"))
+region_locality_dict = pkl.load(open("region_locality_dict (1).pkl","rb"))
 
 st.set_page_config(
     page_title= 'HOUSE PRICE PREDICTOR',

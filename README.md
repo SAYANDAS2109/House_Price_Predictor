@@ -1,36 +1,95 @@
 # 🏠 House Price Predictor
 
-An end-to-end Machine Learning project that predicts residential property prices using property features such as BHK, area, locality, region, property age, house type, and construction status. The project includes data preprocessing, model comparison, hyperparameter tuning, model evaluation, and deployment through a Streamlit web application.
+An end-to-end Machine Learning project that predicts residential property prices using property characteristics such as **BHK, area, locality, region, property age, house type, and construction status**.
+
+This project demonstrates the complete Machine Learning pipeline, including data preprocessing, feature engineering, feature encoding, model comparison, hyperparameter tuning, evaluation, deployment optimization, and an interactive Streamlit web application.
 
 ---
 
-## 📌 Project Overview
+# 🌐 Live Demo
 
-Accurate property price estimation is essential for buyers, sellers, investors, and real estate professionals. This project leverages Machine Learning to build a regression model capable of predicting house prices based on multiple property characteristics.
+🚀 **Streamlit Application**
 
-The project follows a complete machine learning workflow—from data preprocessing and feature engineering to model selection, optimization, and deployment.
+> **Link:** *(Add your deployed Streamlit URL here)*
 
----
+Example:
 
-##  Live Demo
-link
-
----
-
-## 🚀 Features
-
-* Predicts residential property prices instantly
-* Interactive Streamlit web interface
-* Dynamic Region → Locality selection
-* Supports multiple house types
-* User-friendly input form
-* Fast real-time predictions
+https://house-price-predictor.streamlit.app
 
 ---
 
-## 📊 Dataset
+# 📸 Application Screenshots
 
-The dataset contains information about residential properties, including:
+## 🏡 Home Page
+
+Displays the interactive user interface where users can enter all property details.
+
+![Home Page](images/home_page.png)
+
+---
+
+## 📝 Property Details
+
+Shows all user inputs before prediction.
+
+![Input Form](images/input_form.png)
+
+---
+
+## 📈 Prediction Result
+
+Displays the estimated house price after prediction.
+
+![Prediction](images/prediction.png)
+
+---
+
+## 📍 Dynamic Region & Locality Selection
+
+The locality dropdown automatically updates according to the selected region.
+
+![Region Locality](images/region_locality.png)
+
+---
+
+# 📌 Project Overview
+
+Estimating residential property prices accurately is one of the most important problems in the real estate industry.
+
+This project applies supervised machine learning techniques to build a predictive model capable of estimating house prices based on multiple property features.
+
+The project follows a complete end-to-end workflow:
+
+* Data Cleaning
+* Data Preprocessing
+* Feature Engineering
+* Feature Encoding
+* Model Training
+* Model Comparison
+* Hyperparameter Tuning
+* Model Evaluation
+* Model Selection
+* Model Serialization
+* Streamlit Deployment
+
+---
+
+# 🚀 Features
+
+* Interactive Streamlit Interface
+* Real-time House Price Prediction
+* Dynamic Region → Locality Selection
+* Supports Multiple House Types
+* User-Friendly Interface
+* Instant Price Prediction
+* Displays prices in Lakhs or Crores automatically
+* Production-ready Machine Learning Model
+
+---
+
+# 📊 Dataset
+
+The dataset contains residential property information including:
 
 * BHK
 * Area (Sq. Ft.)
@@ -39,27 +98,100 @@ The dataset contains information about residential properties, including:
 * Property Age
 * House Type
 * Construction Status
-* Target Variable: House Price
+* House Price (Target Variable)
 
 ---
 
-## 🧹 Data Preprocessing
+# 🧹 Data Preprocessing
 
-The following preprocessing steps were performed:
+Several preprocessing techniques were applied before model training.
 
-* Removed duplicate records
-* Handled missing values
-* Feature selection
-* Encoded categorical variables
-* Created numerical mappings for Region and Locality
-* Prepared deployment dictionaries for Region–Locality relationships
-* Train-Test Split
+### ✔ Duplicate Removal
+
+Duplicate property records were removed.
+
+### ✔ Missing Value Handling
+
+Missing values were identified and removed from the dataset.
+
+### ✔ Data Cleaning
+
+Unnecessary columns were removed.
+
+Categorical values were standardized.
+
+### ✔ Feature Selection
+
+Only relevant features were selected for training.
 
 ---
 
-## 🤖 Machine Learning Models Evaluated
+# ⚙ Feature Engineering & Encoding
 
-Several regression algorithms were trained and evaluated:
+Several feature engineering techniques were implemented.
+
+## Numerical Features
+
+* Area
+* BHK
+
+## Encoded Features
+
+Categorical variables were converted into numerical values.
+
+### Label Encoding
+
+Used for:
+
+* Region
+* Locality
+* Property Age
+
+Separate encoding dictionaries were created and saved for deployment.
+
+Examples:
+
+* `region_dict.pkl`
+* `locality_dict.pkl`
+
+---
+
+### One-Hot Encoding
+
+Applied to:
+
+House Type
+
+* Apartment
+* Studio Apartment
+* Villa
+* Other
+
+Construction Status
+
+* Ready to Move
+* Under Construction
+
+---
+
+### Dynamic Region–Locality Mapping
+
+A custom Region → Locality dictionary was created.
+
+This enables:
+
+* Selecting a region first.
+* Automatically displaying only the localities belonging to that region.
+
+This significantly improves the usability of the Streamlit application.
+
+---
+
+# 🤖 Machine Learning Models Evaluated
+
+Multiple regression algorithms were trained and compared.
+
+Models evaluated:
 
 * Linear Regression
 * Lasso Regression
@@ -67,50 +199,28 @@ Several regression algorithms were trained and evaluated:
 * Decision Tree Regressor
 * Random Forest Regressor
 
-Model performance was compared using multiple evaluation metrics before selecting the best-performing model.
+The models were compared based on prediction accuracy and evaluation metrics.
 
 ---
 
-## ⚙️ Hyperparameter Tuning
+# ⚙ Hyperparameter Tuning
 
-Hyperparameter tuning was performed on the Random Forest Regressor using RandomizedSearchCV.
+Hyperparameter optimization was performed using **RandomizedSearchCV**.
 
-The tuning process optimized parameters such as:
+The following parameters were optimized:
 
-* Number of estimators
-* Maximum depth
-* Minimum samples split
-* Minimum samples leaf
+* Number of Estimators
+* Maximum Depth
 * Bootstrap
-* Maximum features
+* Minimum Samples Split
+* Minimum Samples Leaf
+* Maximum Features
 
-Although hyperparameter tuning produced a slight improvement in prediction accuracy, it also increased the serialized model size significantly.
-
----
-
-## 📈 Model Performance
-
-### Final Deployed Model
-
-* **Algorithm:** Random Forest Regressor
-* **Number of Trees:** 25
-* **Mean Absolute Percentage Error (MAPE):** **7.92%**
-* **R² Score:** **0.9407**
-* **Mean Absolute Error (MAE):** **14.60**
-
-The deployed model was selected after balancing prediction accuracy with deployment efficiency.
-
-### Engineering Decision
-
-The fully tuned Random Forest achieved a slightly lower MAPE but produced a model larger than **1 GB**, making it impractical for deployment.
-
-A carefully optimized Random Forest with **25 estimators** reduced the model size to approximately **85 MB** while maintaining nearly identical predictive performance, making it suitable for deployment on lightweight cloud platforms.
-
-This reflects an important real-world machine learning trade-off between model performance and production constraints.
+The tuned model achieved the best prediction accuracy but produced a model larger than **1 GB**, making it unsuitable for deployment.
 
 ---
 
-## 📐 Evaluation Metrics
+# 📈 Model Evaluation
 
 The models were evaluated using:
 
@@ -120,27 +230,86 @@ The models were evaluated using:
 
 ---
 
-## 🖥️ Streamlit Application
+# 🏆 Final Deployed Model
 
-The project includes a fully interactive Streamlit application where users can:
+After evaluating multiple models, **Random Forest Regressor** achieved the best performance.
 
-* Select Region
-* Select Locality dynamically
-* Enter BHK
-* Enter Area
-* Choose Property Age
-* Choose House Type
-* Choose Construction Status
-* Predict the estimated property price instantly
+### Final Deployment Configuration
 
-Predictions are displayed in:
+* Algorithm: Random Forest Regressor
+* Trees: **25**
+* Model Size: **~85 MB**
 
-* **Lakhs** (for prices below ₹1 Crore)
-* **Crores** (for prices of ₹1 Crore and above)
+### Performance
+
+* **MAPE:** **7.92%**
+* **R² Score:** **0.9407**
+* **MAE:** **14.60**
 
 ---
 
-## 🛠️ Technologies Used
+# 💡 Deployment Optimization
+
+Although hyperparameter tuning slightly improved prediction accuracy, the resulting model exceeded **1 GB**.
+
+To make the application deployable while maintaining excellent performance, the number of trees was reduced to **25**, resulting in:
+
+* Significant reduction in model size
+* Nearly identical prediction accuracy
+* Faster loading time
+* Easier deployment
+
+This demonstrates an important real-world engineering trade-off between model performance and production constraints.
+
+---
+
+# 🖥 Streamlit Application
+
+The project includes an interactive Streamlit web application.
+
+Users can:
+
+* Select Region
+* Select Locality
+* Enter Area
+* Enter BHK
+* Select Property Age
+* Select House Type
+* Select Construction Status
+* Predict House Price instantly
+
+The application automatically displays:
+
+* Prices below ₹1 Crore in **Lakhs**
+* Prices above ₹1 Crore in **Crores**
+
+---
+
+# 📁 Project Structure
+
+```text
+House_Price_Predictor/
+│
+├── app2.py
+├── house_price_model.pkl
+├── locality_dict.pkl
+├── region_dict.pkl
+├── region_locality_dict.pkl
+├── requirements.txt
+├── README.md
+├── .gitignore
+├── LICENSE
+│
+└── images/
+    ├── home_page.png
+    ├── input_form.png
+    ├── prediction.png
+    └── region_locality.png
+```
+
+---
+
+# 🛠 Technologies Used
 
 * Python
 * Pandas
@@ -153,52 +322,76 @@ Predictions are displayed in:
 
 ---
 
-## 📂 Project Structure
+# ▶ Installation
 
-```text
-House_Price_Predictor/
-│
-├── app2.py
-├── house_price_model.pkl
-├── locality_dict.pkl
-├── region_dict.pkl
-├── region_locality_dict.pkl
-├── requirements.txt
-├── README.md
-└── .gitignore
+Clone the repository
+
+```bash
+git clone https://github.com/SAYANDAS2109/House_Price_Predictor.git
+```
+
+Move into the project directory
+
+```bash
+cd House_Price_Predictor
+```
+
+Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the application
+
+```bash
+streamlit run app2.py
 ```
 
 ---
 
-## 💡 Key Learnings
+# 📚 Key Learnings
 
-Through this project, I gained hands-on experience in:
+This project provided practical experience in:
 
-* End-to-end Machine Learning workflow
-* Data preprocessing and feature engineering
-* Regression model comparison
-* Hyperparameter tuning
-* Model evaluation and selection
-* Model serialization using Pickle
-* Building interactive Streamlit applications
-* Git and GitHub version control
-* Balancing model accuracy with deployment constraints
-
----
-
-## 🔮 Future Improvements
-
-* Integrate additional property features
-* Incorporate geospatial information
-* Add model explainability using SHAP
-* Deploy on a cloud platform with CI/CD
-* Build a REST API for integration with external applications
+* Data Cleaning
+* Data Preprocessing
+* Feature Engineering
+* Feature Encoding
+* Regression Algorithms
+* Model Comparison
+* Hyperparameter Tuning
+* Model Evaluation
+* Model Serialization using Pickle
+* Building Interactive Streamlit Applications
+* Git Version Control
+* GitHub Repository Management
+* Model Deployment
+* Production Model Optimization
 
 ---
 
-## 👨‍💻 Author
+# 🔮 Future Improvements
+
+* Add more property features
+* Integrate location-based geospatial information
+* Use SHAP for model explainability
+* Develop a REST API
+* Implement CI/CD for automated deployment
+* Explore Gradient Boosting and XGBoost for further performance improvements
+
+---
+
+# 👨‍💻 Author
 
 **Sayan Das**
 
-If you found this project interesting, feel free to connect with me on LinkedIn or explore my other repositories.
+Feel free to connect with me on LinkedIn and explore my other Machine Learning projects.
+
+---
+
+# ⭐ If you found this project useful
+
+Please consider giving this repository a **Star ⭐** if you found it helpful or interesting.
+
 

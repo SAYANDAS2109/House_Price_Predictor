@@ -120,7 +120,7 @@ Examples:
 
 ---
 
-### One-Hot Encoding
+### One-Hot Encoding using pd.get_dummies()
 
 Applied to:
 

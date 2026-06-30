@@ -255,10 +255,10 @@ The application automatically displays:
 House_Price_Predictor/
 │
 ├── app2.py
-├── house_price_model.pkl
-├── locality_dict.pkl
-├── region_dict.pkl
-├── region_locality_dict.pkl
+├── house_price_model(4).pkl
+├── locality_dict(1).pkl
+├── region_dict(1).pkl
+├── region_locality_dict(1).pkl
 ├── requirements.txt
 ├── README.md
 ├── .gitignore
@@ -332,10 +332,7 @@ This project provided practical experience in:
 # 🔮 Future Improvements
 
 * Add more property features
-* Integrate location-based geospatial information
-* Use SHAP for model explainability
 * Develop a REST API
-* Implement CI/CD for automated deployment
 * Explore Gradient Boosting and XGBoost for further performance improvements
 
 ---
@@ -345,6 +342,7 @@ This project provided practical experience in:
 **Sayan Das**
 
 Feel free to connect with me on LinkedIn and explore my other Machine Learning projects.
+https://www.linkedin.com/in/sayan-das-1466b1369/
 
 ---
 

@@ -16,44 +16,6 @@ This project demonstrates the complete Machine Learning pipeline, including data
 
 ---
 
-# 📸 Application Screenshots
-
-## 🏡 Home Page
-
-Displays the interactive user interface where users can enter all property details.
-
-![Home Page](<img width="1917" height="976" alt="Screenshot 2026-06-30 184804" src="https://github.com/user-attachments/assets/a4599ee9-c78d-43db-8b1d-6afcee61ef31" />
-)
-
----
-
-## 📝 Property Details
-
-Shows all user inputs before prediction.
-
-![Input Form](<img width="1917" height="976" alt="Screenshot 2026-06-30 184935" src="https://github.com/user-attachments/assets/7794f942-5fe4-42e7-9707-c935a5c4a035" />
-)
-
----
-
-## 📈 Prediction Result
-
-Displays the estimated house price after prediction.
-
-![Prediction](<img width="1917" height="980" alt="Screenshot 2026-06-30 184951" src="https://github.com/user-attachments/assets/6f945669-3e2c-4396-85a4-be78d002bad8" />
-)
-
----
-
-## 📍 Dynamic Region & Locality Selection
-
-The locality dropdown automatically updates according to the selected region.
-
-![Region Locality](<img width="1527" height="603" alt="Screenshot 2026-06-30 185015" src="https://github.com/user-attachments/assets/23e7af0d-c538-4382-9f2f-d263d620386f" />
-)
-
----
-
 # 📌 Project Overview
 
 Estimating residential property prices accurately is one of the most important problems in the real estate industry.

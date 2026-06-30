@@ -390,8 +390,5 @@ Feel free to connect with me on LinkedIn and explore my other Machine Learning p
 
 ---
 
-# ⭐ If you found this project useful
-
-Please consider giving this repository a **Star ⭐** if you found it helpful or interesting.
 
 

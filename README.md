@@ -1,267 +1,199 @@
-# 🏠 Mumbai House Price Prediction using Machine Learning
+# 🏠 House Price Predictor
 
-An end-to-end Machine Learning application that predicts residential property prices across Mumbai based on property characteristics such as location, area, BHK configuration, property age, construction status, and property type.
-
-The project covers the complete Machine Learning lifecycle, including data preprocessing, feature engineering, model selection, hyperparameter optimization, evaluation, and deployment through an interactive Streamlit web application.
-
----
-
-## 🚀 Live Demo
-
-🔗 **Streamlit App:** *(Add your deployed Streamlit URL here)*
+An end-to-end Machine Learning project that predicts residential property prices using property features such as BHK, area, locality, region, property age, house type, and construction status. The project includes data preprocessing, model comparison, hyperparameter tuning, model evaluation, and deployment through a Streamlit web application.
 
 ---
 
 ## 📌 Project Overview
 
-Buying a property involves evaluating numerous factors that influence its market value. This project aims to assist buyers, sellers, and real estate enthusiasts by providing accurate house price predictions using supervised Machine Learning.
+Accurate property price estimation is essential for buyers, sellers, investors, and real estate professionals. This project leverages Machine Learning to build a regression model capable of predicting house prices based on multiple property characteristics.
 
-The application allows users to enter property details through an intuitive interface and instantly receive an estimated property price.
-
----
-
-# ✨ Features
-
-- 🏙️ Dynamic Region → Locality Selection
-- 🏠 Property Type Selection
-- 🛏️ BHK Selection
-- 📐 Area Input
-- 🏗️ Construction Status Selection
-- 🕒 Property Age Selection
-- 💰 Automatic Price Formatting (Lakhs / Crores)
-- ⚡ Real-time Predictions
-- 📊 Interactive Streamlit Interface
+The project follows a complete machine learning workflow—from data preprocessing and feature engineering to model selection, optimization, and deployment.
 
 ---
 
-# 📂 Dataset
+## 🚀 Features
 
-The dataset contains residential property listings from Mumbai and includes features such as:
-
-- BHK
-- Area (Sq.ft)
-- Region
-- Locality
-- Property Age
-- Property Type
-- Construction Status
-- Property Price (Target Variable)
+* Predicts residential property prices instantly
+* Interactive Streamlit web interface
+* Dynamic Region → Locality selection
+* Supports multiple house types
+* User-friendly input form
+* Fast real-time predictions
 
 ---
 
-# 🛠 Data Preprocessing
+## 📊 Dataset
 
-Several preprocessing steps were performed before training the models.
+The dataset contains information about residential properties, including:
 
-### ✔ Data Cleaning
-
-- Removed duplicate entries
-- Removed missing values
-- Standardized categorical values
-- Handled inconsistent location names
-
-### ✔ Feature Engineering
-
-- Target Encoding for:
-  - Region
-  - Locality
-
-- One-Hot Encoding for:
-  - Property Type
-  - Construction Status
-
-- Numerical Encoding for:
-  - Property Age
+* BHK
+* Area (Sq. Ft.)
+* Region
+* Locality
+* Property Age
+* House Type
+* Construction Status
+* Target Variable: House Price
 
 ---
 
-# 🤖 Machine Learning Models Evaluated
+## 🧹 Data Preprocessing
 
-Multiple regression algorithms were trained and evaluated to identify the best-performing model.
+The following preprocessing steps were performed:
 
-### Models Tested
-
-- Linear Regression
-- Lasso Regression
-- Ridge Regression
-- Decision Tree Regressor
-- Random Forest Regressor
-
-Each model was evaluated using standard regression metrics.
+* Removed duplicate records
+* Handled missing values
+* Feature selection
+* Encoded categorical variables
+* Created numerical mappings for Region and Locality
+* Prepared deployment dictionaries for Region–Locality relationships
+* Train-Test Split
 
 ---
 
-# 🎯 Model Selection
+## 🤖 Machine Learning Models Evaluated
 
-After comparing the performance of all trained models, **Random Forest Regressor** consistently produced the highest predictive accuracy and generalization performance.
+Several regression algorithms were trained and evaluated:
 
-Therefore, it was selected as the final production model.
+* Linear Regression
+* Lasso Regression
+* Ridge Regression
+* Decision Tree Regressor
+* Random Forest Regressor
 
----
-
-# ⚙ Hyperparameter Tuning
-
-To further improve performance, **RandomizedSearchCV** was used to optimize the Random Forest model.
-
-### Tuned Parameters
-
-- Number of Estimators
-- Maximum Depth
-- Maximum Features
-- Minimum Samples Split
-- Minimum Samples Leaf
-- Bootstrap
-
-The optimized model significantly improved prediction accuracy while reducing overfitting.
+Model performance was compared using multiple evaluation metrics before selecting the best-performing model.
 
 ---
 
-# 📈 Model Performance
+## ⚙️ Hyperparameter Tuning
 
-| Metric | Score |
-|---------|-------|
-| R² Score | **0.945** |
-| Mean Absolute Error (MAE) | **14.35 Lakhs** |
-| Mean Absolute Percentage Error (MAPE) | **7.9%** |
+Hyperparameter tuning was performed on the Random Forest Regressor using RandomizedSearchCV.
 
-These results demonstrate that the model is capable of providing highly accurate price estimates on unseen data.
+The tuning process optimized parameters such as:
 
----
+* Number of estimators
+* Maximum depth
+* Minimum samples split
+* Minimum samples leaf
+* Bootstrap
+* Maximum features
 
-# 💻 Technologies Used
-
-### Programming Language
-
-- Python
-
-### Libraries
-
-- Pandas
-- NumPy
-- Scikit-learn
-- Streamlit
-- Pickle
-
-### Development Environment
-
-- Google Colab
-- Visual Studio Code
-- Git
-- GitHub
+Although hyperparameter tuning produced a slight improvement in prediction accuracy, it also increased the serialized model size significantly.
 
 ---
 
-# 🌐 Web Application
+## 📈 Model Performance
 
-The trained model has been deployed using **Streamlit**.
+### Final Deployed Model
 
-The web application allows users to:
+* **Algorithm:** Random Forest Regressor
+* **Number of Trees:** 25
+* **Mean Absolute Percentage Error (MAPE):** **7.92%**
+* **R² Score:** **0.9407**
+* **Mean Absolute Error (MAE):** **14.60**
 
-- Select Region
-- Select Locality
-- Enter Area
-- Select Property Age
-- Select Property Type
-- Select Construction Status
-- Predict Property Price
+The deployed model was selected after balancing prediction accuracy with deployment efficiency.
 
-The application automatically performs feature encoding before passing the data into the trained model.
+### Engineering Decision
+
+The fully tuned Random Forest achieved a slightly lower MAPE but produced a model larger than **1 GB**, making it impractical for deployment.
+
+A carefully optimized Random Forest with **25 estimators** reduced the model size to approximately **85 MB** while maintaining nearly identical predictive performance, making it suitable for deployment on lightweight cloud platforms.
+
+This reflects an important real-world machine learning trade-off between model performance and production constraints.
 
 ---
 
-# 📁 Project Structure
+## 📐 Evaluation Metrics
 
-```
-Mumbai-House-Price-Prediction
+The models were evaluated using:
+
+* Mean Absolute Percentage Error (MAPE)
+* Mean Absolute Error (MAE)
+* R² Score
+
+---
+
+## 🖥️ Streamlit Application
+
+The project includes a fully interactive Streamlit application where users can:
+
+* Select Region
+* Select Locality dynamically
+* Enter BHK
+* Enter Area
+* Choose Property Age
+* Choose House Type
+* Choose Construction Status
+* Predict the estimated property price instantly
+
+Predictions are displayed in:
+
+* **Lakhs** (for prices below ₹1 Crore)
+* **Crores** (for prices of ₹1 Crore and above)
+
+---
+
+## 🛠️ Technologies Used
+
+* Python
+* Pandas
+* NumPy
+* Scikit-learn
+* Streamlit
+* Pickle
+* Git
+* GitHub
+
+---
+
+## 📂 Project Structure
+
+```text
+House_Price_Predictor/
 │
-├── app.py
+├── app2.py
 ├── house_price_model.pkl
 ├── locality_dict.pkl
 ├── region_dict.pkl
 ├── region_locality_dict.pkl
 ├── requirements.txt
 ├── README.md
-└── screenshots/
+└── .gitignore
 ```
 
 ---
 
-# 📷 Application Preview
+## 💡 Key Learnings
 
-## Home Page
+Through this project, I gained hands-on experience in:
 
-*(Insert Screenshot)*
-
----
-
-## Prediction Result
-
-*(Insert Screenshot)*
-
----
-
-# 🔄 Machine Learning Workflow
-
-```
-Dataset
-    │
-    ▼
-Data Cleaning
-    │
-    ▼
-Feature Engineering
-    │
-    ▼
-Encoding
-    │
-    ▼
-Train-Test Split
-    │
-    ▼
-Model Training
-    │
-    ▼
-Model Comparison
-    │
-    ▼
-Random Forest Selection
-    │
-    ▼
-Hyperparameter Tuning
-    │
-    ▼
-Model Evaluation
-    │
-    ▼
-Model Serialization (.pkl)
-    │
-    ▼
-Streamlit Deployment
-```
+* End-to-end Machine Learning workflow
+* Data preprocessing and feature engineering
+* Regression model comparison
+* Hyperparameter tuning
+* Model evaluation and selection
+* Model serialization using Pickle
+* Building interactive Streamlit applications
+* Git and GitHub version control
+* Balancing model accuracy with deployment constraints
 
 ---
 
-# 🚀 Future Improvements
+## 🔮 Future Improvements
 
-- Google Maps Integration
-- Price Trend Visualization
-- Property Recommendation System
-- User Authentication
-
-
----
-
-# 👨‍💻 Developer
-
-## Sayan Das
-
-### Connect with me
-
-- GitHub: https://github.com/yourusername
-- LinkedIn: https://linkedin.com/in/yourprofile
+* Integrate additional property features
+* Incorporate geospatial information
+* Add model explainability using SHAP
+* Deploy on a cloud platform with CI/CD
+* Build a REST API for integration with external applications
 
 ---
 
-## 📜 License
+## 👨‍💻 Author
 
-This project is licensed under the **MIT License**.
+**Sayan Das**
+
+If you found this project interesting, feel free to connect with me on LinkedIn or explore my other repositories.
+

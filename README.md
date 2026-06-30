@@ -22,7 +22,8 @@ This project demonstrates the complete Machine Learning pipeline, including data
 
 Displays the interactive user interface where users can enter all property details.
 
-![Home Page](images/home_page.png)
+![Home Page](<img width="1917" height="976" alt="Screenshot 2026-06-30 184804" src="https://github.com/user-attachments/assets/a4599ee9-c78d-43db-8b1d-6afcee61ef31" />
+)
 
 ---
 
@@ -30,7 +31,8 @@ Displays the interactive user interface where users can enter all property detai
 
 Shows all user inputs before prediction.
 
-![Input Form](images/input_form.png)
+![Input Form](<img width="1917" height="976" alt="Screenshot 2026-06-30 184935" src="https://github.com/user-attachments/assets/7794f942-5fe4-42e7-9707-c935a5c4a035" />
+)
 
 ---
 
@@ -38,7 +40,8 @@ Shows all user inputs before prediction.
 
 Displays the estimated house price after prediction.
 
-![Prediction](images/prediction.png)
+![Prediction](<img width="1917" height="980" alt="Screenshot 2026-06-30 184951" src="https://github.com/user-attachments/assets/6f945669-3e2c-4396-85a4-be78d002bad8" />
+)
 
 ---
 
@@ -46,7 +49,8 @@ Displays the estimated house price after prediction.
 
 The locality dropdown automatically updates according to the selected region.
 
-![Region Locality](images/region_locality.png)
+![Region Locality](<img width="1527" height="603" alt="Screenshot 2026-06-30 185015" src="https://github.com/user-attachments/assets/23e7af0d-c538-4382-9f2f-d263d620386f" />
+)
 
 ---
 
@@ -297,12 +301,6 @@ House_Price_Predictor/
 ├── README.md
 ├── .gitignore
 ├── LICENSE
-│
-└── images/
-    ├── home_page.png
-    ├── input_form.png
-    ├── prediction.png
-    └── region_locality.png
 ```
 
 ---
